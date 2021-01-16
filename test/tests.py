@@ -14,10 +14,36 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'PORT A and B',
+tests = [ {'description': 'Tank Level 2',
     'steps': [ {'inputs': [('PINA',0x02)], 'iterations': 1 }],
-    'expected': [('PORTC',0x20)],
+    'expected': [('PORTC',0x60)],
     },
+
+     {'description': 'Tank Level 4',
+    'steps': [ {'inputs': [('PINA',0x04)], 'iterations': 1 }],
+    'expected': [('PORTC',0x70)],
+    },
+
+      {'description': 'Tank Level 6',
+    'steps': [ {'inputs': [('PINA',0x06)], 'iterations': 1 }],
+    'expected': [('PORTC',0x38)],
+    },
+
+      {'description': 'Tank Level 8',
+    'steps': [ {'inputs': [('PINA',0x08)], 'iterations': 1 }],
+    'expected': [('PORTC',0x3C)],
+    },
+
+     {'description': 'Tank Level 12',
+    'steps': [ {'inputs': [('PINA',0x0C)], 'iterations': 1 }],
+    'expected': [('PORTC',0x3E)],
+    },
+
+     {'description': 'Tank Level 15',
+    'steps': [ {'inputs': [('PINA',0x0F)], 'iterations': 1 }],
+    'expected': [('PORTC',0x3F)],
+    },
+
     ]
 
 
