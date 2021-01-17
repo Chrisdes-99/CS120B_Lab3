@@ -16,12 +16,12 @@
 # altered in between executions (unless preconditions are used).
 tests = [ {'description': 'Tank Level 2',
     'steps': [ {'inputs': [('PINA',0x02)], 'iterations': 1 }],
-    'expected': [('PORTC',0x20)],
+    'expected': [('PORTC',0x60)],
     },
 
      {'description': 'Tank Level 4',
     'steps': [ {'inputs': [('PINA',0x04)], 'iterations': 1 }],
-    'expected': [('PORTC',0x30)],
+    'expected': [('PORTC',0x70)],
     },
 
       {'description': 'Tank Level 6',
@@ -41,6 +41,24 @@ tests = [ {'description': 'Tank Level 2',
 
      {'description': 'Tank Level 15',
     'steps': [ {'inputs': [('PINA',0x0F)], 'iterations': 1 }],
+    'expected': [('PORTC',0x3F)],
+    },
+
+
+      {'description': 'Tank Level 1',
+    'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 1 }],
+    'expected': [('PORTC',0x60)],
+    },
+
+
+	 {'description': 'Tank Level 11',
+    'steps': [ {'inputs': [('PINA',0x0B)], 'iterations': 1 }],
+    'expected': [('PORTC',0x3E)],
+    },
+
+
+	 {'description': 'Tank Level 14',
+    'steps': [ {'inputs': [('PINA',0x0E)], 'iterations': 1 }],
     'expected': [('PORTC',0x3F)],
     },
 

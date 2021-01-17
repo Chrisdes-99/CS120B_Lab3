@@ -21,43 +21,57 @@ int main(void) {
 
 	unsigned char tempA = 0x00;
 	unsigned char tempC = 0x00;
+
+	unsigned char top_Lev = 0x60;
+	unsigned char next_Lev = 0x70;
+	unsigned char next_2 = 0x38;
+        unsigned char next_3 = 0x3C;
+	unsigned char next_4 = 0x3E;
+	unsigned char next_5 = 0x3F;
     /* Insert your solution below */
     while (1) {
 
 	tempA = PINA;
 
-	//if(tempA == 0x01 || tempA == 0x02){
+	if(tempA == 0x01 || tempA == 0x02){
 	  //tempC = (tempC & 0x9F) | 0x60;
-	//}
+	  tempC = top_Lev;
+	}
 
-	//else if(tempA == 0x03 || tempA == 0x04){
+	else if(tempA == 0x03 || tempA == 0x04){
 	  //tempC = (tempC & 0x8F) | 0x70;
-	//}
-
-	if(tempA == 0x05 || tempA == 0x06){
-	  tempC = (tempC & 0xC7) | 0x38;
+	  tempC = next_Lev;
 	}
 
-	if(tempA == 0x07 || tempA == 0x08 || tempA == 0x09){
-	  tempC = (tempC & 0xC3) | 0x3C; 
+	else if(tempA == 0x05 || tempA == 0x06){
+	 // tempC = (tempC & 0xC7) | 0x38;
+	 tempC = next_2;	
+
 	}
 
-	if(tempA == 0x0A || tempA == 0x0B || tempA == 0x0C){
-	  tempC = (tempC & 0xC1) | 0x3E;
+	else if(tempA == 0x07 || tempA == 0x08 || tempA == 0x09){
+	 // tempC = (tempC & 0xC3) | 0x3C; 
+	 tempC = next_3;
 	}
 
-	if(tempA == 0x0D || tempA == 0x0E || tempA == 0x0F){
-	  tempC = (tempC & 0xC0) | 0x3F;
+	else if(tempA == 0x0A || tempA == 0x0B || tempA == 0x0C){
+	 // tempC = (tempC & 0xC1) | 0x3E;
+	 tempC = next_4;
+	}
+
+	else if(tempA == 0x0D || tempA == 0x0E || tempA == 0x0F){
+	 // tempC = (tempC & 0xC0) | 0x3F;
+	 tempC = next_5;
 	}
    
    
-        if(tempA == 0x01 || tempA == 0x02){
-                   tempC = (tempC & 0xDF) | 0x20;
-         }
+        //if(tempA == 0x01 || tempA == 0x02){
+          //         tempC = (tempC & 0xDF) | 0x20;
+        // }
          
-         if(tempA == 0x03 || tempA == 0x04){
-                   tempC = (tempC & 0xCF) | 0x30;
-        }
+        // if(tempA == 0x03 || tempA == 0x04){
+         //          tempC = (tempC & 0xCF) | 0x30;
+        //}
         
 	
 
