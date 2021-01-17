@@ -31,6 +31,7 @@ int main(void) {
         unsigned char next_Lev3 = 0x3C;
 	unsigned char next_Lev4 = 0x3E;
 	unsigned char high_Lev = 0x3F;
+	unsigned char none_Lev = 0x40;
 
 	unsigned char seatBelt = 0x80;
     /* Insert your solution below */
@@ -67,6 +68,10 @@ int main(void) {
 	else if(tempA == 0x0D || tempA == 0x0E || tempA == 0x0F){
 	 // tempC = (tempC & 0xC0) | 0x3F;
 	 tempC = high_Lev;
+	}
+
+	else{
+           tempC = none_Lev;
 	}
  
 	if(tempA == 0x30){
