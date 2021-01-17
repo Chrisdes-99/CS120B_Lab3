@@ -26,31 +26,42 @@ int main(void) {
 
 	tempA = PINA;
 
-	if(tempA == 0x01 || tempA == 0x02){
-	  tempC = (tempC & 0x9F) | 0x60;
-	}
+	//if(tempA == 0x01 || tempA == 0x02){
+	  //tempC = (tempC & 0x9F) | 0x60;
+	//}
 
-	else if(tempA == 0x03 || tempA == 0x04){
-	  tempC = (tempC & 0x8F) | 0x70;
-	}
+	//else if(tempA == 0x03 || tempA == 0x04){
+	  //tempC = (tempC & 0x8F) | 0x70;
+	//}
 
-	else if(tempA == 0x05 || tempA == 0x06){
+	if(tempA == 0x05 || tempA == 0x06){
 	  tempC = (tempC & 0xC7) | 0x38;
 	}
 
-	else if(tempA == 0x07 || tempA == 0x08 || tempA == 0x09){
+	if(tempA == 0x07 || tempA == 0x08 || tempA == 0x09){
 	  tempC = (tempC & 0xC3) | 0x3C; 
 	}
 
-	else if(tempA == 0x0A || tempA == 0x0B || tempA == 0x0C){
+	if(tempA == 0x0A || tempA == 0x0B || tempA == 0x0C){
 	  tempC = (tempC & 0xC1) | 0x3E;
 	}
 
-	else if(tempA == 0x0D || tempA == 0x0E || tempA == 0x0F){
+	if(tempA == 0x0D || tempA == 0x0E || tempA == 0x0F){
 	  tempC = (tempC & 0xC0) | 0x3F;
 	}
+   
+   
+        if(tempA == 0x01 || tempA == 0x02){
+                   tempC = (tempC & 0xDF) | 0x20;
+         }
+         
+         if(tempA == 0x03 || tempA == 0x04){
+                   tempC = (tempC & 0xCF) | 0x30;
+        }
+        
+	
 
-	PINC = tempC;
+	PORTC = tempC;
 }
     return 0;
 }
